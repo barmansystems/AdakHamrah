@@ -87,15 +87,14 @@ Route::get('test/{id?}', function ($id = null) {
 //    event(new SendMessageEvent(1, []));
 });
 
-
-Route::get('testii', function () {
-
-    $users = User::where('id', 1)->get();
-    $message = 'یک نامه با عنوان برای شما ارسال شده است';
-   return Notification::send($users, new SendMessage($message, url('/panel/indicator/inbox')));
+Route::get('tests', function () {
+    $message = "یک دستور به شماره  ";
+    $user = auth()->user();
+    Notification::send($user, new SendMessage($message, url('/panel/payments_order')));
 //    return phpinfo();
 //    event(new SendMessageEvent(1, []));
 });
+
 
 //Route::get('testt/{id}',[IndicatorController::class,'downloadFromIndicator']);
 
@@ -109,7 +108,7 @@ Route::get('testii', function () {
 //    }
 //})->name('import-excel');
 
-Route::middleware(['auth','web'])->prefix('/panel')->group(function () {
+Route::middleware(['auth', 'web'])->prefix('/panel')->group(function () {
     Route::match(['get', 'post'], '/', [PanelController::class, 'index'])->name('panel');
     Route::post('send-sms', [PanelController::class, 'sendSMS'])->name('sendSMS');
     Route::post('saveFcmToken', [PanelController::class, 'saveFCMToken']);

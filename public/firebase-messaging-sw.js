@@ -16,7 +16,6 @@ firebase.initializeApp({
     storageBucket: "adakhamrah-a6ef8.appspot.com",
     messagingSenderId: "873189207860",
     appId: "1:873189207860:web:9be2bc694f82e023f27f61",
-    measurementId: "G-50QLS8HQ06"
 });
 
 /*

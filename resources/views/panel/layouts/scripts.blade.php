@@ -133,7 +133,7 @@
                             </a>`)
             audio.play();
         });
-    //end realtime
+    // end realtime
 
     // firebase push notification
     var firebaseConfig = {
@@ -142,8 +142,7 @@
         projectId: "adakhamrah-a6ef8",
         storageBucket: "adakhamrah-a6ef8.appspot.com",
         messagingSenderId: "873189207860",
-        appId: "1:873189207860:web:9be2bc694f82e023f27f61",
-        measurementId: "G-50QLS8HQ06"
+        appId: "1:873189207860:web:9be2bc694f82e023f27f61"
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -157,7 +156,9 @@
             })
             .then(function (token) {
                 // console.log(token);
+
                 console.log(token)
+
                 $.ajax({
                     url: '/panel/saveFcmToken',
                     type: 'POST',
