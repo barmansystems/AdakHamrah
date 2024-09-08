@@ -16,16 +16,7 @@
 		<!-- Theme Config Js -->
 		<script src="/assets/js/config.js"></script>
 
-        <style>
-            /*#captcha_sec img {*/
-            /*    cursor: pointer;*/
-            /*}*/
 
-            /*#captcha_sec input {*/
-            /*    text-align: center !important;*/
-            /*    letter-spacing: 1rem;*/
-            /*}*/
-        </style>
     </head>
     <body class="loading">
         <div class="account-pages mt-5 mb-5">
