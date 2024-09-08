@@ -6,26 +6,23 @@
 
         .div-indicator {
             position: absolute;
-            right: 1px;
             top: 18rem;
+            right: 1px;
             padding: 2.3rem !important;
             direction: rtl !important;
-            line-height: 3em;
-
         }
-
         .date {
             position: absolute;
-            top: 8.9rem;
-            left: 4rem;
+            top: 5.8rem;
+            left: 3.1rem;
             font-size: 1.4rem;
 
         }
 
         .number {
             position: absolute;
-            top: 11.8rem;
-            left: 3rem;
+            top: 8.6rem;
+            left: 2rem;
             font-size: 1.4rem;
             width: 8rem;
             text-align: center;
@@ -33,8 +30,8 @@
 
         .attachment {
             position: absolute;
-            top: 14.5rem;
-            left: 3rem;
+            top: 11.2rem;
+            left: 2rem;
             font-size: 1.4rem;
             width: 8rem;
             text-align: center;

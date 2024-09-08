@@ -133,16 +133,17 @@
                             </a>`)
             audio.play();
         });
-    // end realtime
+    //end realtime
 
     // firebase push notification
     var firebaseConfig = {
-        apiKey: "AIzaSyB0pWogHh4EW2lqj8_M1mFptMSrSTKXYsI",
-        authDomain: "parso-462c2.firebaseapp.com",
-        projectId: "parso-462c2",
-        storageBucket: "parso-462c2.appspot.com",
-        messagingSenderId: "5600097210",
-        appId: "1:5600097210:web:9d437224b1b139cc9aa383"
+        apiKey: "AIzaSyBfLobYXTRWiN9I0fTekXr01lxAWfeAOrI",
+        authDomain: "adakhamrah-a6ef8.firebaseapp.com",
+        projectId: "adakhamrah-a6ef8",
+        storageBucket: "adakhamrah-a6ef8.appspot.com",
+        messagingSenderId: "873189207860",
+        appId: "1:873189207860:web:9be2bc694f82e023f27f61",
+        measurementId: "G-50QLS8HQ06"
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -156,9 +157,7 @@
             })
             .then(function (token) {
                 // console.log(token);
-
                 console.log(token)
-
                 $.ajax({
                     url: '/panel/saveFcmToken',
                     type: 'POST',

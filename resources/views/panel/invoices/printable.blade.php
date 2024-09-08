@@ -138,7 +138,7 @@
             <div class="card-title">
                 <div class="row">
                     <div class="col-4">
-                        <img src="/assets/images/header-logo.png" style="width: 15rem;">
+                        <img src="/assets/images/img/logo-text-purple.png" style="width: 15rem;">
                     </div>
                     <div class="col-3 text-end">
                         <h3>سفارش مشتری</h3>
@@ -164,15 +164,15 @@
                             <tr>
                                 <td class="text-center">
                                     <div class="mb-3">
-                                        <span class="me-100">نام شخص حقیقی/حقوقی: بازرگانی پرسو تجارت ایرانیان</span>
-                                        <span class="me-100">شماره اقتصادی: 10103472930</span>
-                                        <span class="me-100">شماره ثبت/شماره ملی: 309754</span>
-                                        <span class="me-100">شناسه ملی: 10103472930</span>
+                                        <span class="me-100">نام شخص حقیقی/حقوقی: آداک همراه خورشید قشم</span>
+                                        <span class="me-100">شماره اقتصادی: 14012179352</span>
+                                        <span class="me-100">شماره ثبت/شماره ملی: 7394</span>
+                                        <span class="me-100">شناسه ملی: 14012179352</span>
                                     </div>
                                     <div>
-                                        <span class="me-100">نشانی: خیابان کریمخان، خیابان ایرانشهر، پلاک 242، طبقه پنجم</span>
-                                        <span class="me-100">کد پستی: 1584745337</span>
-                                        <span class="me-100">شماره تلفن: 02188867100</span>
+                                        <span class="me-100">نشانی: هرمزگان، قشم،مجمتع داماس ،طبقه ششم، پلاک 601</span>
+                                        <span class="me-100">کد پستی: 7951617805</span>
+                                        <span class="me-100">شماره تلفن: 09123485006</span>
                                     </div>
                                 </td>
                             </tr>

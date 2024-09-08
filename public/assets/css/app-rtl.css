@@ -40,8 +40,8 @@ html[data-bs-theme=dark] {
 html[data-menu-color=light] {
   --bs-menu-bg: #ffffff;
   --bs-menu-item-color: #6c757d;
-  --bs-menu-item-hover: #0096d6;
-  --bs-menu-item-active: #0096d6;
+  --bs-menu-item-hover: #7B2CBF;
+  --bs-menu-item-active: #7B2CBF;
   --bs-menu-item-active-bg: rgba(59, 175, 218, 0.2);
 }
 
@@ -86,7 +86,7 @@ html[data-bs-theme=dark][data-topbar-color=light] {
 }
 
 html[data-topbar-color=brand] {
-  --bs-topbar-bg: #0096d6;
+  --bs-topbar-bg: #7B2CBF;
   --bs-topbar-item-color: rgba(255, 255, 255, 0.7);
   --bs-topbar-item-hover-color: #ffffff;
   --bs-topbar-search-bg: rgba(255, 255, 255, 0.1);

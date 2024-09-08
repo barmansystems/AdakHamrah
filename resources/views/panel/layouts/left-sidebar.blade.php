@@ -4,20 +4,20 @@
     <div class="logo-box">
         <a href="javascript:void(0)" class="logo logo-dark text-center">
             <span class="logo-sm">
-                <img src="/assets/images/logo-sm-dark.png" alt="" height="24">
+                <img src="/assets/images/img/adakHamrahLogo-light.png" alt="" height="24">
                 <!-- <span class="logo-lg-text-light">Minton</span> -->
             </span>
             <span class="logo-lg">
-                <img src="/assets/images/logo-dark.png" alt="" height="20">
+                <img src="/assets/images/img/adak-hamrah-logo.png" alt="e" height="20">
                 <!-- <span class="logo-lg-text-light">M</span> -->
             </span>
         </a>
         <a href="javascript:void(0)" class="logo logo-light text-center">
             <span class="logo-sm">
-                <img src="/assets/images/logo-sm.png" alt="" height="54">
+                <img src="/assets/images/img/adakHamrahLogo-light.png" alt="" height="54">
             </span>
             <span class="logo-lg">
-                <img src="/assets/images/logo-light.png" alt="" height="50">
+                <img src="/assets/images/img/adak-hamrah-logo.png" alt="d" height="50">
             </span>
         </a>
     </div>
@@ -158,7 +158,7 @@
                                     @php $active_item = active_sidebar(['parso-products']); @endphp
                                     <li class="{{ $active_item ? 'menuitem-active' : '' }}">
                                         <a href="{{ route('parso.index') }}" {{ $active_item ? 'active' : '' }}>محصولات
-                                            پرسو تجارت</a>
+                                            آداک همراه</a>
                                     </li>
                                 @endcan
                                 @can('price-history')
