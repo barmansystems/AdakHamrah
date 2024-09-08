@@ -91,7 +91,7 @@ class SendMessage extends Notification
                         "notification" => [
                             "title" => "",
                             "body" => $message,
-                            "icon" => asset('assets/images/logo-sm.png')
+                            "icon" => asset('assets/images/img/adakHamrahLogo-sm.png')
                         ],
                     ]
                 ]

@@ -87,6 +87,16 @@ Route::get('test/{id?}', function ($id = null) {
 //    event(new SendMessageEvent(1, []));
 });
 
+
+Route::get('testii', function () {
+
+    $users = User::where('id', 1)->get();
+    $message = 'یک نامه با عنوان برای شما ارسال شده است';
+   return Notification::send($users, new SendMessage($message, url('/panel/indicator/inbox')));
+//    return phpinfo();
+//    event(new SendMessageEvent(1, []));
+});
+
 //Route::get('testt/{id}',[IndicatorController::class,'downloadFromIndicator']);
 
 // import excel

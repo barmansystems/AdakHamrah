@@ -37,16 +37,16 @@
                             <div class="card-body p-4">
 
                                 <div class="text-center w-75 m-auto">
-                                    <div class="auth-logo">
+                                    <div class="auth-logo mb-3">
                                         <a href="javascript:void(0)" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-                                                <img src="/assets/images/logo-dark.png" alt="" height="60">
+                                                <img src="/assets/images/img/logo-text-purple.png" alt="" height="50">
                                             </span>
                                         </a>
 
                                         <a href="javascript:void(0)" class="logo logo-light text-center">
                                             <span class="logo-lg">
-                                                <img src="/assets/images/logo-light.png" alt="" height="60">
+                                                <img src="/assets/images/img/logo-text-purple.png" alt="" height="50">
                                             </span>
                                         </a>
                                     </div>
