@@ -2,13 +2,8 @@
 
 namespace App\Notifications;
 
-use App\Models\User;
 use Google\Auth\Credentials\ServiceAccountCredentials;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Events\SendMessage as SendMessageEvent;
 use Illuminate\Support\Facades\Log;
@@ -70,6 +65,7 @@ class SendMessage extends Notification
     private function send_firebase_notification($message, $url, $firebaseToken)
     {
         try {
+            Log::info('Firebase Notification Started');
             $credential = new ServiceAccountCredentials(
                 "https://www.googleapis.com/auth/firebase.messaging",
                 json_decode(file_get_contents(public_path('firebase-private-key.json')), true)
@@ -77,7 +73,7 @@ class SendMessage extends Notification
 
             $token = $credential->fetchAuthToken(\Google\Auth\HttpHandler\HttpHandlerFactory::build());
 
-            $ch = curl_init("https://fcm.googleapis.com/v1/projects/parso-462c2/messages:send");
+            $ch = curl_init("https://fcm.googleapis.com/v1/projects/adakhamrah-a6ef8/messages:send");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
@@ -97,12 +93,17 @@ class SendMessage extends Notification
                 ]
             ];
 
+
+
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "post");
-            curl_exec($ch);
+            $response = curl_exec($ch);
+            Log::info('CURL Response: ' . $response);
             curl_close($ch);
-        } catch (\Exception $e) {
 
+            Log::info('Firebase Notification Ended');
+        } catch (\Exception $e) {
+            Log::info('Firebase Notification Ended in exception: ' . $e->getMessage());
         }
 
     }
