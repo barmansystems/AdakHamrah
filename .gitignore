@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/firebase-private-key.json
 /storage/*.key
 /vendor
 .env
