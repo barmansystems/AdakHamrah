@@ -334,7 +334,7 @@
                                 <tr>
                                     <td colspan="6" id="seller_sign_sec">
                                         <img src="{{ $invoice->user->sign_image ?? '' }}" class="sign">
-                                        <img src="{{ asset('/assets/images/stamp.png') }}" class="stamp">
+                                        <img src="{{ asset('/assets/images/adak-hamrah-mohr-emza.png') }}" class="stamp">
                                         <small>مهر و امضای فروشنده</small>
                                     </td>
                                     <td colspan="6"><small>مهر و امضای خریدار</small></td>
