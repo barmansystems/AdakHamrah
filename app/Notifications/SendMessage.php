@@ -65,7 +65,6 @@ class SendMessage extends Notification
     private function send_firebase_notification($message, $url, $firebaseToken)
     {
         try {
-            Log::info('Firebase Notification Started');
             $credential = new ServiceAccountCredentials(
                 "https://www.googleapis.com/auth/firebase.messaging",
                 json_decode(file_get_contents(public_path('firebase-private-key.json')), true)
@@ -98,12 +97,9 @@ class SendMessage extends Notification
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "post");
             $response = curl_exec($ch);
-            Log::info('CURL Response: ' . $response);
             curl_close($ch);
 
-            Log::info('Firebase Notification Ended');
         } catch (\Exception $e) {
-            Log::info('Firebase Notification Ended in exception: ' . $e->getMessage());
         }
 
     }
