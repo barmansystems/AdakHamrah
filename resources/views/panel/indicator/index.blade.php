@@ -61,12 +61,25 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @php
+                                        $search = request()->input('number');
+                                    @endphp
                                     @foreach($indicators as $key => $indicator)
                                         <tr>
                                             <td>{{ ++$key }}</td>
 
                                             <td>{{ $indicator->title }}</td>
-                                            <td>{{ $indicator->number?? '---' }}</td>
+                                            <td>{{ $indicator->to??'-' }}</td>
+                                            @php
+                                                $highlightedNumber = $indicator->number ?? '---';
+                                                if ($search) {
+                                                    $highlightedNumber = str_ireplace($search, "<span class='bg-warning'>" . $search . "</span>", $highlightedNumber);
+                                                }
+                                            @endphp
+                                            <td>{!! $highlightedNumber !!}</td>
+                                            @if(auth()->user()->isCEO() || auth()->user()->isAdmin())
+                                                <td>{{ $indicator->user->fullName()}}</td>
+                                            @endif
                                             <td>{{ verta($indicator->created_at)->format('H:i - Y/m/d') }}</td>
                                             {{--                                            @can('coupons-edit')--}}
                                             <td><a class="btn btn-info btn-floating"
