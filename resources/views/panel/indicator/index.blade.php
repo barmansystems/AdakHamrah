@@ -19,10 +19,25 @@
                         <div class="card-body">
                             <div class="card-title d-flex justify-content-end">
                                 @can('indicator')
+                                    <a href="{{ route('indicator.excel')}}" class="btn btn-success mx-1">
+                                        <i class="fa fa-file-excel mr-2"></i>
+                                        خروجی اکسل
+                                    </a>
                                     <a href="{{ route('indicator.create') }}" class="btn btn-primary">
                                         <i class="fa fa-plus mr-2"></i>
                                         ایجاد نامه جدید
                                     </a>
+                                @endcan
+                            </div>
+                            <div class="card-title d-flex justify-content-start">
+                                @can('indicator')
+                                    <form action="{{url('/panel/indicator')}}">
+                                        <div class="input-group">
+                                            <input type="text" name="number" class="form-control"
+                                                   placeholder="شماره نامه">
+                                            <input type="submit" class="btn btn-info" value="جستجو">
+                                        </div>
+                                    </form>
                                 @endcan
                             </div>
                             <div class="table-responsive">
@@ -32,7 +47,11 @@
                                     <tr>
                                         <th>#</th>
                                         <th>عنوان</th>
+                                        <th>خطاب به</th>
                                         <th>شماره نامه</th>
+                                        @if(auth()->user()->isCEO() || auth()->user()->isAdmin())
+                                            <th>ایجاد شده توسط</th>
+                                        @endif
                                         <th>تاریخ</th>
                                         {{--                                        @can('coupons-edit')--}}
                                         <th>دانلود</th>
