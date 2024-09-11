@@ -50,14 +50,14 @@
                                         <div class="invalid-feedback text-danger d-block">{{ $message }}</div>
                                         @enderror
                                     </div>
-{{--                                    <div class="mb-2 col-xl-3 col-lg-3 col-md-3">--}}
-{{--                                        <label for="number" class="form-label">شماره نامه</label>--}}
-{{--                                        <input type="text" class="form-control" name="number" id="number"--}}
-{{--                                               value="{{ old('number',$indicator->number) }}">--}}
-{{--                                        @error('number')--}}
-{{--                                        <div class="invalid-feedback text-danger d-block">{{ $message }}</div>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
+                                    {{--                                    <div class="mb-2 col-xl-3 col-lg-3 col-md-3">--}}
+                                    {{--                                        <label for="number" class="form-label">شماره نامه</label>--}}
+                                    {{--                                        <input type="text" class="form-control" name="number" id="number"--}}
+                                    {{--                                               value="{{ old('number',$indicator->number) }}">--}}
+                                    {{--                                        @error('number')--}}
+                                    {{--                                        <div class="invalid-feedback text-danger d-block">{{ $message }}</div>--}}
+                                    {{--                                        @enderror--}}
+                                    {{--                                    </div>--}}
                                     <div class="mb-2 col-xl-3 col-lg-3 col-md-3">
                                         <label for="attachment" class="form-label">پیوست</label>
                                         <input type="text" class="form-control" name="attachment" id="attachment"
@@ -70,20 +70,13 @@
                                         <label for="attachment" class="form-label">سربرگ</label>
                                         <select name="header" class="form-control" id="header">
                                             <option value="info" {{$indicator->header=='info'?'selected':''}}>سربرگ
-                                                فارسی پرسو
-                                                تجارت
-                                                (Info)
+                                                (Info) آداک همراه خورشید قشم
                                             </option>
                                             <option value="sale" {{$indicator->header=='sale'?'selected':''}}>سربرگ
-                                                فارسی پرسو
-                                                تجارت
-                                                (Sale)
+                                                (Sale) آداک همراه خورشید قشم
                                             </option>
                                             <option value="english" {{$indicator->header=='english'?'selected':''}}>
-                                                سربرگ
-                                                انگلیسی پرسو
-                                                تجارت
-                                                انگلیسی پرسو تجارت
+                                                سربرگ انگلیسی آداک همراه خورشید قشم
                                             </option>
                                         </select>
                                         @error('header')
@@ -123,16 +116,14 @@
                                     </div>
                                 </div>
 
-                                    <div>
-                                        <button type="submit" class="btn btn-warning mt-3">ویرایش نامه</button>
-                                    </div>
-
+                                <div>
+                                    <button type="submit" class="btn btn-warning mt-3">ویرایش نامه</button>
+                                </div>
 
 
                             </form>
                         </div>
                     </div>
-
 
 
                     {{--                    <button type="button" id="exportPdf" class="btn btn-danger mt-3"--}}
