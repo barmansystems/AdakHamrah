@@ -51,6 +51,7 @@ class IndicatorController extends Controller
         $Indicator->attachment = $request->attachment;
         $Indicator->header = $request->header;
         $Indicator->text = $request->text;
+        $Indicator->to = $request->to;
         $Indicator->user_id = auth()->id();
         $Indicator->save();
 
@@ -92,6 +93,7 @@ class IndicatorController extends Controller
         $indicator->number = $this->generateUniqueCode();
         $indicator->attachment = $request->attachment;
         $indicator->header = $request->header;
+        $indicator->to = $request->to;
         $indicator->text = $request->text;
         $indicator->save();
         $indicator->users()->sync($request->receiver);
