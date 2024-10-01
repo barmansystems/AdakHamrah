@@ -149,7 +149,8 @@ class ActivityLog extends Model
         'payment-edit-edit' => 'ویرایش دستور پرداخت/دریافت',
         'payment-delete-delete' => 'حذف دستور پرداخت/دریافت',
         //copy
-        'copy-information' => 'کپی اطلاعات'
+        'copy-information' => 'کپی اطلاعات',
+        'print-information' => 'پرینت اطلاعات',
     ];
 
     public function user()

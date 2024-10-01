@@ -13,6 +13,7 @@ class CompanyInfoController extends Controller
 
     public function index()
     {
+        $this->authorize('company-info');
         $info = CompanyInfo::first();
         return view('panel.company-info.index', compact('info'));
     }
@@ -20,6 +21,7 @@ class CompanyInfoController extends Controller
 
     public function edit($id)
     {
+        $this->authorize('company-info');
         $info = CompanyInfo::first();
         return view('panel.company-info.edit', compact('info'));
     }
@@ -27,6 +29,7 @@ class CompanyInfoController extends Controller
 
     public function update(StoreCompanyInfoRequest $request, $id)
     {
+        $this->authorize('company-info');
         $info = CompanyInfo::findOrfail($id);
         $info->update($request->all());
         alert()->success('اطلاعات با موفقیت ویرایش شد', 'موفقیت آمیز');
@@ -35,7 +38,7 @@ class CompanyInfoController extends Controller
 
     public function copyItem(Request $request)
     {
-
+        $this->authorize('company-info');
         activity_log('copy-information', __METHOD__, [$request->all()]);
         return "success";
     }
@@ -43,8 +46,8 @@ class CompanyInfoController extends Controller
     public function printData(Request $request)
     {
 
+        $this->authorize('company-info');
         $allData = $request->data;
-
         activity_log('print-information', __METHOD__, [$request->all()]);
         $pdf = PDF::loadView('panel.pdf.printInfo', ['allData' => $allData], [], [
             'format' => 'A3',
