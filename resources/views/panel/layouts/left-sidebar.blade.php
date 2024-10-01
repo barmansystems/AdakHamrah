@@ -68,7 +68,7 @@
                 <li class="menu-title">پنل مدیریت</li>
                 {{-- Dashboard --}}
                 @canany(['users-list','roles-list','tasks-list','notes-list','leaves-list','reports-list','file-manager'])
-                    @php $active_side = active_sidebar(['panel','users','users/create','users/{user}/edit','roles','roles/create','roles/{role}/edit', 'tasks','tasks/create','tasks/{task}/edit', 'tasks/{task}', 'notes','notes/create','notes/{note}/edit','leaves','leaves/create','leaves/{leave}/edit','reports','reports/create','reports/{report}/edit','file-manager']); @endphp
+                    @php $active_side = active_sidebar(['panel','users','users/create','users/{user}/edit','roles','roles/create','roles/{role}/edit', 'tasks','tasks/create','tasks/{task}/edit', 'tasks/{task}', 'notes','notes/create','notes/{note}/edit','leaves','leaves/create','leaves/{leave}/edit','reports','reports/create','reports/{report}/edit','file-manager','company-info','company-info/{company_info}/edit']); @endphp
                     <li class="{{ $active_side ? 'menuitem-active' : '' }}">
                         <a href="#dashboard" data-bs-toggle="collapse" aria-expanded="false" aria-controls="dashboard">
                             <i class="ri-dashboard-line"></i>
@@ -89,8 +89,7 @@
                                 @can('roles-list')
                                     @php $active_item = active_sidebar(['roles','roles/create','roles/{role}/edit']); @endphp
                                     <li class="{{ $active_item ? 'menuitem-active' : '' }}">
-                                        <a href="{{ route('roles.index') }}" {{ $active_item ? 'active' : '' }}>نقش
-                                            ها</a>
+                                        <a href="{{ route('roles.index') }}" {{ $active_item ? 'active' : '' }}>نقش ها</a>
                                     </li>
                                 @endcan
                                 @can('tasks-list')
@@ -123,6 +122,13 @@
                                     <li class="{{ $active_item ? 'menuitem-active' : '' }}">
                                         <a href="{{ route('file-manager.index') }}" {{ $active_item ? 'active' : '' }}>مدیریت
                                             فایل</a>
+                                    </li>
+                                @endcan
+                                @can('company-info')
+                                    @php $active_item = active_sidebar(['company-info','company-info/{company_info}/edit']); @endphp
+                                    <li class="{{ $active_item ? 'menuitem-active' : '' }}">
+                                        <a href="{{ route('company-info.index') }}" {{ $active_item ? 'active' : '' }}>
+                                            اطلاعات شرکت</a>
                                     </li>
                                 @endcan
                             </ul>
