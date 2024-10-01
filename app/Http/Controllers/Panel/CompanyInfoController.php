@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCompanyInfoRequest;
 use App\Models\CompanyInfo;
 use Illuminate\Http\Request;
 use PDF as PDF;
@@ -24,7 +25,7 @@ class CompanyInfoController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreCompanyInfoRequest $request, $id)
     {
         $info = CompanyInfo::findOrfail($id);
         $info->update($request->all());

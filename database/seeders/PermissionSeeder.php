@@ -152,6 +152,8 @@ class PermissionSeeder extends Seeder
 //            'it-manager' => 'مدیر آی تی',
 //            'it-man' => 'کارمند آی تی',
 //            'purchase-engineering' => 'مهندسی خرید',
+
+            'company-info' => 'اطلاعات شرکت',
         ];
 
         foreach ($items as $key => $item) {
