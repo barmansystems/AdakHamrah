@@ -33,6 +33,7 @@ class CompanyInfoController extends Controller
         $info = CompanyInfo::findOrfail($id);
         $info->update($request->all());
         alert()->success('اطلاعات با موفقیت ویرایش شد', 'موفقیت آمیز');
+        activity_log('edit-company-information', __METHOD__, [$request->all()]);
         return redirect()->route('company-info.index');
     }
 

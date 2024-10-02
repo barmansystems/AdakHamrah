@@ -151,6 +151,7 @@ class ActivityLog extends Model
         //copy
         'copy-information' => 'کپی اطلاعات',
         'print-information' => 'پرینت اطلاعات',
+        'edit-company-information' => 'ویرایش اطلاعات شرکت',
     ];
 
     public function user()
