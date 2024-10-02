@@ -49,6 +49,11 @@ class CompanyInfoController extends Controller
         $this->authorize('company-info');
         $allData = $request->data;
         activity_log('print-information', __METHOD__, [$request->all()]);
+        if (isset($allData['name'])) {
+            $nameData = ['name' => $allData['name']];
+            unset($allData['name']);
+            $allData = array_merge($nameData, $allData);
+        }
         $pdf = PDF::loadView('panel.pdf.printInfo', ['allData' => $allData], [], [
             'format' => 'A3',
             'orientation' => 'L',
