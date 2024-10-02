@@ -47,7 +47,7 @@ class CompanyInfoController extends Controller
     {
 
         $this->authorize('company-info');
-        $allData = $request->data;
+        $allData = $request->input('data');
         activity_log('print-information', __METHOD__, [$request->all()]);
         if (isset($allData['name'])) {
             $nameData = ['name' => $allData['name']];
