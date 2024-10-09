@@ -23,7 +23,7 @@
                                         <i class="fa fa-file-excel mr-2"></i>
                                         خروجی اکسل
                                     </a>
-                                    <a href="{{ route('indicator.create') }}" class="btn btn-primary">
+                                    <a href="{{ route('indicator.create') }}" class="btn btn-primary mx-1">
                                         <i class="fa fa-plus mr-2"></i>
                                         ایجاد نامه جدید
                                     </a>
@@ -52,11 +52,12 @@
                                         @if(auth()->user()->isCEO() || auth()->user()->isAdmin())
                                             <th>ایجاد شده توسط</th>
                                         @endif
+
                                         <th>تاریخ</th>
                                         {{--                                        @can('coupons-edit')--}}
                                         <th>دانلود</th>
                                         <th>ویرایش</th>
-{{--                                        <th>حذف</th>--}}
+                                        {{--                                        <th>حذف</th>--}}
                                         {{--                                        @endcan--}}
                                     </tr>
                                     </thead>
@@ -95,13 +96,13 @@
                                             {{--                                            @endcan--}}
                                             {{--                                            @can('coupons-delete')--}}
 
-{{--                                            <td>--}}
-{{--                                                <button class="btn btn-danger btn-floating trashRow"--}}
-{{--                                                        data-url="{{ route('indicator.destroy',$indicator->id) }}"--}}
-{{--                                                        data-id="{{ $indicator->id }}">--}}
-{{--                                                    <i class="fa fa-trash"></i>--}}
-{{--                                                </button>--}}
-{{--                                            </td>--}}
+                                            {{--                                            <td>--}}
+                                            {{--                                                <button class="btn btn-danger btn-floating trashRow"--}}
+                                            {{--                                                        data-url="{{ route('indicator.destroy',$indicator->id) }}"--}}
+                                            {{--                                                        data-id="{{ $indicator->id }}">--}}
+                                            {{--                                                    <i class="fa fa-trash"></i>--}}
+                                            {{--                                                </button>--}}
+                                            {{--                                            </td>--}}
                                             {{--                                            @endcan--}}
                                         </tr>
                                     @endforeach

@@ -153,7 +153,15 @@ class PermissionSeeder extends Seeder
 //            'it-man' => 'کارمند آی تی',
 //            'purchase-engineering' => 'مهندسی خرید',
 
-            'company-info' => 'اطلاعات شرکت',
+//            'company-info' => 'اطلاعات شرکت',
+            'customer-order-list' => 'لیست سفارشات مشتری',
+            'customer-order-create' => 'ثبت سفارشات مشتری',
+            'customer-order-edit' => 'ویرایش سفارشات مشتری',
+            'customer-order-delete' => 'حذف سفارشات مشتری',
+            'setad-fee-list' => 'لیست کارمزد ستاد',
+            'setad-fee-create' => 'ثبت کارمزد ستاد',
+            'setad-fee-edit' => 'ویرایش کارمزد ستاد',
+            'setad-fee-delete' => 'حذف کارمزد ستاد',
         ];
 
         foreach ($items as $key => $item) {
