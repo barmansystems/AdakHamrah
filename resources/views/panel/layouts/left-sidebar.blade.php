@@ -195,6 +195,22 @@
                         </a>
                         <div class="collapse {{ $active_side ? 'show' : '' }}" id="orders">
                             <ul class="nav-second-level">
+                                @can('customer-order-list')
+                                    @php $active_item = active_sidebar(['orders','orders/create','orders/{order}/edit','search/orders','order-action/{orders}','customer-orders-status/{orders}','order-action/{order}']); @endphp
+                                    <li class="{{ $active_item ? 'menuitem-active' : '' }}">
+                                        <a href="{{ route('orders.index') }}" {{ $active_item ? 'active' : '' }}>
+                                            سفارشات مشتری
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('setad-fee-list')
+                                    @php $active_item = active_sidebar(['setad-fee','setad-fee/create','setad-fee/{order}/action','setad-fee/{setad_fee}/edit','setad-fee/{setad_fee}']); @endphp
+                                    <li class="{{ $active_item ? 'menuitem-active' : '' }}">
+                                        <a href="{{ route('setad-fee.index') }}" {{ $active_item ? 'active' : '' }}>
+                                            کارمزد ستاد
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('invoices-list')
                                     @php $active_item = active_sidebar(['invoices','invoices/create','invoices/{invoice}/edit','search/invoices','invoice-action/{invoice}','orders-status/{invoice}']); @endphp
                                     <li class="{{ $active_item ? 'menuitem-active' : '' }}">
