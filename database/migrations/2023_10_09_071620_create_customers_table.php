@@ -18,7 +18,7 @@ class CreateCustomersTable extends Migration
             $table->string('user_id');
             $table->string('name')->unique();
             $table->string('code')->unique()->nullable();
-            $table->enum('type',['government','private']);
+            $table->enum('type',['government','private'])->nullable();
             $table->enum('customer_type', ['free-sale','online-sale','setad']);
             $table->string('economical_number')->comment('شماره اقتصادی')->nullable();
             $table->string('national_number')->comment('شماره ملی');
