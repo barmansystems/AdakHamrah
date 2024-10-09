@@ -27,9 +27,17 @@ class Customer extends Model
     {
         return $this->hasMany(Invoice::class);
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 
     public function buy_orders()
     {
         return $this->hasMany(BuyOrder::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

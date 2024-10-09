@@ -148,6 +148,20 @@ class ActivityLog extends Model
         'payment-create-create' => 'ثبت دستور پرداخت/دریافت',
         'payment-edit-edit' => 'ویرایش دستور پرداخت/دریافت',
         'payment-delete-delete' => 'حذف دستور پرداخت/دریافت',
+
+        //customer_order
+        'create-orders' => 'ایجاد سفارش مشتری',
+        'edit-orders' => 'ویرایش سفارش مشتری',
+        'delete-orders' => 'حذف سفارش مشتری',
+        'order-action' => 'اقدام به سفارش مشتری',
+        'delete-order-file' => 'حذف فایل پیش فاکتور',
+        //Setad_Fee
+        'setad-fee-list' => 'لیست کارمزد ستاد',
+        'setad-fee-create' => 'ثبت کارمزد ستاد',
+        'setad-fee-edit' => 'ویرایش کارمزد ستاد',
+        'setad-fee-delete' => 'حذف کارمزد ستاد',
+        'setad-fee-upload' => 'آپلود رسید کارمزد ستاد',
+        'setad-fee-delete-receipt' => 'حذف رسید کارمزد ستاد',
         //copy
         'copy-information' => 'کپی اطلاعات',
         'print-information' => 'پرینت اطلاعات',
