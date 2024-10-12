@@ -106,7 +106,7 @@
                         $title = 'فعالیت های اخیر کارمندان فروش (5 تای اخیر)';
                         $activities = \App\Models\ActivityLog::where('user_id','!=',\auth()->id())->whereHas('user.role', function ($q) {
                             $q->whereHas('permissions', function ($q) {
-                                $q->whereIn('name', ['free-sales','system-user','partner-tehran-use','partner-other-user','single-price-user']);
+                                $q->whereIn('name', ['setad','free-sale','online-sale']);
                             })->where('name', '!=', 'admin');
                         })->latest()->limit(5)->get();
                     @endphp
@@ -325,7 +325,6 @@
                                         <tr>
                                             <th>#</th>
                                             <th>نام حقیقی/حقوقی</th>
-                                            <th>نوع</th>
                                             <th>مشتری</th>
                                             <th>استان</th>
                                             <th>شماره تماس 1</th>
@@ -338,7 +337,6 @@
                                             <tr>
                                                 <td>{{ ++$key }}</td>
                                                 <td>{{ $customer->name }}</td>
-                                                <td>{{ \App\Models\Customer::TYPE[$customer->type] }}</td>
                                                 <td>{{ \App\Models\Customer::CUSTOMER_TYPE[$customer->customer_type] }}</td>
                                                 <td>{{ $customer->province }}</td>
                                                 <td>{{ $customer->phone1 }}</td>
