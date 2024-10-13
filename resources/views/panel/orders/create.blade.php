@@ -522,14 +522,10 @@
             // thousands grouping
             $($('#other_products_table input[name="other_prices[]"]')[index]).siblings()[0].innerText = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             // $($('#other_products_table input[name="other_discount_amounts[]"]')[index]).siblings()[0].innerText = discount_amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
             total = price *count;
             $('#other_products_table input[name="other_prices[]"]')[index].value = price;
             $('#other_products_table input[name="other_total_prices[]"]')[index].value = total;
-
             $('#btn_form').removeAttr('disabled').text('ثبت فرم');
-
         }
-
     </script>
 @endsection
