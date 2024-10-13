@@ -150,7 +150,7 @@ Route::middleware(['auth', 'web'])->prefix('/panel')->group(function () {
 
 
 
-    //company-info
+    //companyInfo
     Route::resource('company-info', CompanyInfoController::class)->except(['show', 'destroy', 'create', 'store']);
     Route::get('company-info-copy', [CompanyInfoController::class,'copyItem']);
     Route::post('company-info-print-data', [CompanyInfoController::class,'printData'])->name('company-info-print-data');
