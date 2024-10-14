@@ -27,7 +27,7 @@
                                     <div class="invoice-logo">
                                         <!-- logo started -->
                                         <div class="logo">
-                                            <img src="/assets/images/header-logo.png"
+                                            <img src="/assets/images/img/logo-text-purple.png"
                                                  alt="logo">
                                         </div>
                                         <!-- logo ended -->
