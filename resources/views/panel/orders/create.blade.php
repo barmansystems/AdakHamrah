@@ -9,6 +9,9 @@
         #other_products_table input, #other_products_table select {
             width: auto;
         }
+        .description{
+
+        }
     </style>
 @endsection
 @section('content')
@@ -75,19 +78,24 @@
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <div class="col-xl-3 col-lg-3 col-md-3 mb-3">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 mb-3">
                                             <label class="form-label" for="description">توضیحات بیشتر</label>
-                                            <textarea name="description" id="description"
-                                                      class="form-control">{{ old('description') }}</textarea>
+                                            <textarea  name="description" id="description" class="description form-control" rows="10">{{ old('description') }}</textarea>
                                             @error('description')
                                             <div class="invalid-feedback text-danger d-block">{{ $message }}</div>
                                             @enderror
+                                            <span class="text-info fst-italic">خط بعد Shift + Enter</span>
                                         </div>
                                     </div>
 
                                     <div class="col-12 mb-4 mt-2 text-center">
                                         <hr>
                                         <h4>مشخصات کالا یا خدمات مورد معامله</h4>
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <i class="fa fa-info-circle font-size-20 align-middle"></i>
+                                        <strong>توجه!</strong>
+                                        همکار فروش گرامی قیمت کالا باید به صورت <u>قیمت تمام شده</u>(به همراه مالیات ، ارزش افزوده و...) قرار بگیرد.
                                     </div>
                                     <div class="col-12 mt-2 text-center">
                                         <h5>محصولات شرکت</h5>
@@ -472,6 +480,7 @@
             // get customer info
             $(document).on('change', 'select[name="buyer_name"]', function () {
                 let customer_id = this.value;
+
                 $.ajax({
                     url: '/panel/get-customer-info/' + customer_id,
                     type: 'post',
@@ -484,10 +493,10 @@
                         $('#province').val(res.data.province).trigger('change');
                         $('#city').val(res.data.city)
                     }
-                });
-            });
+                })
+            })
             // end get customer info
-        });
+        })
 
         function CalcProductInvoice(changeable) {
             var index = $(changeable).parent().parent().index()
@@ -521,10 +530,23 @@
             // thousands grouping
             $($('#other_products_table input[name="other_prices[]"]')[index]).siblings()[0].innerText = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             // $($('#other_products_table input[name="other_discount_amounts[]"]')[index]).siblings()[0].innerText = discount_amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
             total = price *count;
             $('#other_products_table input[name="other_prices[]"]')[index].value = price;
             $('#other_products_table input[name="other_total_prices[]"]')[index].value = total;
+
             $('#btn_form').removeAttr('disabled').text('ثبت فرم');
+
         }
+        $('.description').keydown(function(e) {
+            if (e.key === 'Enter' && e.shiftKey) {
+                e.preventDefault();
+                const cursorPos = this.selectionStart;
+                const value = $(this).val();
+                $(this).val(value.substring(0, cursorPos) + "\n" + value.substring(cursorPos));
+                this.selectionStart = this.selectionEnd = cursorPos + 1;
+            }
+        });
+
     </script>
 @endsection
