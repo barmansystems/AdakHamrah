@@ -472,7 +472,6 @@
             // get customer info
             $(document).on('change', 'select[name="buyer_name"]', function () {
                 let customer_id = this.value;
-
                 $.ajax({
                     url: '/panel/get-customer-info/' + customer_id,
                     type: 'post',
@@ -485,10 +484,10 @@
                         $('#province').val(res.data.province).trigger('change');
                         $('#city').val(res.data.city)
                     }
-                })
-            })
+                });
+            });
             // end get customer info
-        })
+        });
 
         function CalcProductInvoice(changeable) {
             var index = $(changeable).parent().parent().index()
