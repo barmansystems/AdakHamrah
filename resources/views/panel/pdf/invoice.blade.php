@@ -93,13 +93,13 @@
             <table>
                 <tr>
                     <td style="width: 700px">
-                        <img src="{{ public_path('/assets/images/header-logo.png') }}" style="width: 15rem;">
+                        <img src="{{ public_path('/assets/images/img/logo-text-purple.png') }}" style="width: 15rem;">
                     </td>
                     <td>
-                        <span style="font-size: 25px">سفارش مشتری</span>
+                        <span style="font-size: 25px">پیش فاکتور فروش کالا و خدمات</span>
                     </td>
                     <td style="width: 200px">
-                        <p style="font-size: 15px">شماره سریال: {{ $invoice->id }}</p>
+                        <p style="font-size: 15px">شماره سریال: {{ $invoice->order->code??$invoice->id }}</p>
                         <br>
                         <p style="font-size: 15px">تاریخ: {{ verta($invoice->created_at)->format('Y/m/d') }}</p>
                     </td>
@@ -118,21 +118,21 @@
                         <tr>
                             <td>
                                 <div>
-                                    <span>نام شخص حقیقی/حقوقی: بازرگانی پرسو تجارت ایرانیان</span>
+                                    <span>نام شخص حقیقی/حقوقی: آداک همراه خورشید قشم</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span>شماره اقتصادی: 10103472930</span>
+                                    <span>شماره اقتصادی: 14012179352</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span>شماره ثبت/شماره ملی: 309754</span>
+                                    <span>شماره ثبت/شماره ملی: 7394</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span>شناسه ملی: 10103472930</span>
+                                    <span>شناسه ملی: 14012179352</span>
                                 </div>
                                 <div style="height: 2rem">&nbsp;</div>
                                 <div>
-                                    <span>نشانی: خیابان کریمخان، خیابان ایرانشهر، پلاک 242، طبقه پنجم</span>
+                                    <span>نشانی: هرمزگان، قشم، مجتمع داماس، طبقه ششم، پلاک601</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span>کد پستی: 1584745337</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span>شماره تلفن: 02188867100</span>
+                                    <span>شماره تلفن: 09123485006</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
                             </td>
@@ -288,14 +288,22 @@
                                         غیر نقدی<input type="checkbox">
                                     </div>
                                 </td>
+                                <td colspan="8" class="text-start">
+                                    {{change_number_to_words($sum_invoice_net - $invoice->discount)}} ریال
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="2"><small>توضیحات</small></td>
-                                <td colspan="10">{{ $invoice->description }}</td>
+                                <td colspan="10">{!! nl2br(e($invoice->description )) !!}</td>
                                 {{--                                <td colspan="10">لطفا مبلغ فاکتور را به شماره شبا IR55 0110 0000 0010 3967 1380 01 نزد بانک صنعت و معدن شعبه مرکزی واریز فرمایید.</td>--}}
                             </tr>
                             <tr>
-                                <td colspan="12"><strong>تمام اجناس ارائه شده دارای 18 ماه گارانتی از سوی شرکت صنایع ماشین های اداری ماندگار پارس می باشد</strong></td>
+                                <td colspan="12">
+                                    خواهشمند است مبلغ فاكتور را به شماره شبا IR87-0120-0000-0000-9836-1606-31 نزد بانك ملت شعبه سیتی سنتر قشم واريز نماييد. با تشكر
+                                    <br>
+                                    <br>
+                                    آدرس سایت  https://adakhamrah.com
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="6">
@@ -311,8 +319,11 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </td>
                                 <td>
-                                    <img src="{{ $invoice->user->sign_image ? public_path($invoice->user->sign_image) : '' }}" style="width: 10rem">
-                                    <img src="{{ public_path('assets/images/stamp.png') }}" style="width: 13rem">
+                                    @if($invoice->user->sign_image)
+                                        <img
+                                            src="{{ $invoice->user->sign_image ? public_path($invoice->user->sign_image) : '' }}"
+                                            style="width: 10rem">
+                                    @endif
                                 </td>
                                 <td></td>
                                 <td></td>

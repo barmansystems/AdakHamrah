@@ -1,5 +1,5 @@
 @extends('panel.layouts.master')
-@section('title', 'چاپ سفارش')
+@section('title', 'چاپ پیش فاکتور')
 @php
     $left_sidebar = false;
     $topbar = false;
@@ -141,11 +141,11 @@
                         <img src="/assets/images/img/logo-text-purple.png" style="width: 15rem;">
                     </div>
                     <div class="col-3 text-end">
-                        <h3>سفارش مشتری</h3>
+                        <h3>پیش فاکتور فروش کالا و خدمات</h3>
                     </div>
                     <div class="col-2"></div>
                     <div class="col-2 text-center">
-                        <p class="m-0"> شماره سریال: {{ $invoice->id }}</p>
+                        <p class="m-0"> شماره سریال: {{ $invoice->order->code??$invoice->id }}</p>
                         <hr class="mt-0">
                         <p class="m-0">تاریخ: {{ verta($invoice->created_at)->format('Y/m/d') }}</p>
                         <hr class="mt-0">
@@ -321,16 +321,26 @@
                                             </div>
                                         </div>
                                     </td>
+                                    <td colspan="8" class="text-start">
+                                        {{change_number_to_words($sum_invoice_net - $invoice->discount)}} ریال
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><small>توضیحات</small></td>
-                                    <td colspan="10">{{ $invoice->description }}</td>
-                                    {{--                                        <td colspan="10">لطفا مبلغ فاکتور را به شماره شبا IR55 0110 0000 0010 3967 1380 01 نزد بانک صنعت و معدن شعبه مرکزی واریز فرمایید.</td>--}}
+                                    <td colspan="10">{!! nl2br(e($invoice->description )) !!}</td>
                                 </tr>
 {{--                                <tr>--}}
 {{--                                    <td colspan="12"><strong>تمام اجناس ارائه شده دارای 18 ماه گارانتی از سوی شرکت--}}
 {{--                                            صنایع ماشین های اداری ماندگار پارس می باشد</strong></td>--}}
 {{--                                </tr>--}}
+                                <tr>
+                                    <td colspan="12">
+                                        خواهشمند است مبلغ فاكتور را به شماره شبا IR87-0120-0000-0000-9836-1606-31 نزد بانك ملت شعبه سیتی سنتر قشم واريز نماييد. با تشكر
+                                        <br>
+                                        <br>
+                                        آدرس سایت  https://adakhamrah.com
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td colspan="6" id="seller_sign_sec">
                                         <img src="{{ $invoice->user->sign_image ?? '' }}" class="sign">
@@ -348,7 +358,7 @@
         </div>
         <div class="pb-2 d-flex justify-content-between px-3" id="print_sec">
             <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="fa fa-chevron-right me-2"></i>برگشت</a>
-            <button class="btn btn-info" id="btn_print"><i class="fa fa-print me-2"></i>چاپ</button>
+{{--            <button class="btn btn-info" id="btn_print"><i class="fa fa-print me-2"></i>چاپ</button>--}}
             <form action="{{ route('invoices.download') }}" method="post">
                 @csrf
                 <input type="hidden" name="invoice_id" value="{{ $invoice->id }}">

@@ -90,13 +90,13 @@ Route::get('test/{id?}', function ($id = null) {
 //    event(new SendMessageEvent(1, []));
 });
 
-Route::get('tests', function () {
-    $message = "یک دستور به شماره  ";
-    $user = auth()->user();
-    Notification::send($user, new SendMessage($message, url('/panel/payments_order')));
-//    return phpinfo();
-//    event(new SendMessageEvent(1, []));
-});
+//Route::get('tests', function () {
+//    $message = "یک دستور به شماره  ";
+//    $user = auth()->user();
+//    Notification::send($user, new SendMessage($message, url('/panel/payments_order')));
+////    return phpinfo();
+////    event(new SendMessageEvent(1, []));
+//});
 
 
 //Route::get('testt/{id}',[IndicatorController::class,'downloadFromIndicator']);
@@ -138,6 +138,8 @@ Route::middleware(['auth', 'web'])->prefix('/panel')->group(function () {
 //    Route::match(['get', 'post'], '/order/search/orders', [OrderController::class, 'search'])->name('orders.search');
     Route::post('excel/orders', [OrderController::class, 'excel'])->name('orders.excel');
     Route::get('get-customer-order-status/{id}', [OrderController::class, 'getCustomerOrderStatus'])->name('order.get.customer.order.status');
+    Route::get('get-customer-order/{code}', [OrderController::class, 'getCustomerOrder'])->name('order.get.customer.order');
+
 
     //company-info
 

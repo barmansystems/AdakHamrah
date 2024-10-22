@@ -366,7 +366,7 @@
                                             {{--                            @canany(['accountant','admin','ceo'])--}}
                                             <td>
                                                 <a class="btn btn-info btn-floating"
-                                                   href="{{ route('orders.show', $order->id) }}">
+                                                   href="{{ route('orders.show', $order->id) }}" target="_blank">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                             </td>
@@ -546,5 +546,3 @@
         });
     </script>
 @endsection
-
-
