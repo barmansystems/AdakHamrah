@@ -84,11 +84,11 @@ Route::get('/', function () {
     }
     return view('auth.login');
 });
-Route::get('test/{id?}', function ($id = null) {
-    return \auth()->loginUsingId($id);
-//    return phpinfo();
-//    event(new SendMessageEvent(1, []));
-});
+//Route::get('test/{id?}', function ($id = null) {
+//    return \auth()->loginUsingId($id);
+////    return phpinfo();
+////    event(new SendMessageEvent(1, []));
+//});
 
 //Route::get('tests', function () {
 //    $message = "یک دستور به شماره  ";
