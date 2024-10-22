@@ -214,8 +214,7 @@
                                 @can('invoices-list')
                                     @php $active_item = active_sidebar(['invoices','invoices/create','invoices/{invoice}/edit','search/invoices','invoice-action/{invoice}','orders-status/{invoice}']); @endphp
                                     <li class="{{ $active_item ? 'menuitem-active' : '' }}">
-                                        <a href="{{ route('invoices.index') }}" {{ $active_item ? 'active' : '' }}>سفارشات
-                                            فروش</a>
+                                        <a href="{{ route('invoices.index') }}" {{ $active_item ? 'active' : '' }}>پیش فاکتورها</a>
                                     </li>
                                 @endcan
                                 @can('buy-orders-list')
